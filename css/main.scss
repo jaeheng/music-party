@@ -1,0 +1,198 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+html {
+  background-image: -webkit-gradient(linear, 0 100, 0 bottom, from(#000), to(#5788fe));
+}
+body {
+  position: relative;
+  background: url("../images/bottom-bg.png") repeat-x bottom;
+  overflow: hidden;
+}
+
+%span-base{
+  position: absolute;
+  bottom: 0;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+@for $i from 1 through 3 {
+  .star#{$i} {
+    @extend %span-base;
+    width: $i + px;
+    height: $i + px;
+    $lists: ();
+    @for $j from 1 through 400 {
+      $x: (15+$i)*random() * 10 * $j + px;
+      $y: (-$i * random() * 10* $j) + px;
+      $lists: append($lists, $x $y 0 #fff, comma);
+    }
+    box-shadow: $lists;
+    animation: Star 5*$i + s linear infinite;
+  }
+}
+
+@keyframes Star {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-1000px);
+  }
+}
+
+@keyframes AnimStar {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  70% {
+    transform: translate(0, 0);
+    width: 10px;
+    height: 10px;
+    opacity: .5;
+  }
+  100% {
+    transform: translate(-1000px, 400px);
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+}
+
+.spe-star {
+  position: absolute;
+  top: 200px;
+  right: 200px;
+  border-radius: 50%;
+  background-color: #fff;
+  animation: AnimStar 5s linear infinite;
+}
+.spe-star1 {
+  top: 220px;
+  right: 220px;
+}
+.spe-star2 {
+  top: 160px;
+  right: 240px;
+}
+
+.moon {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  position: absolute;
+  top: 50px;
+  right: 200px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff;
+}
+
+@keyframes AnimCloud {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+
+.cloud,
+.cloud:after,
+.cloud:before {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 50%;
+  position: absolute;
+  top: 100px;
+  right: 300px;
+}
+.cloud {
+  background-color: #eee;
+  animation: AnimCloud 5s linear 1;
+  opacity: .5;
+}
+.cloud:after,
+.cloud:before {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 80px;
+}
+.cloud:after {
+  top: 20px;
+  right: 40px;
+  border-bottom-right-radius: 0;
+}
+.cloud:before {
+  top: 20px;
+  right: -40px;
+  border-bottom-left-radius: 0;
+}
+
+#canvas{
+  position:fixed;
+  bottom:0;
+  left:0;
+  z-index:-100;
+  width:100%;
+  height:477px
+}
+
+.action {
+  background: #3f63b8;
+  width: 40px;
+  text-align: center;
+}
+.action div {
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #5170b9;
+}
+
+.parse {
+  position: relative;
+  &:after, &:before {
+    content: '';
+    width: 16px;
+    height: 1px;
+    position: absolute;
+    left: 12px;
+    background-color: #fff;
+  }
+  &:after {
+    top: 16px;
+  }
+  &:before {
+    top: 24px;
+  }
+}
+
+.play {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    border-left-color: #fff;
+    top: 10px;
+    left: 15px;
+  }
+}
