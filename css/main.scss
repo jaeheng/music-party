@@ -6,12 +6,18 @@ html, body {
   height: 100%;
 }
 html {
-  background-image: -webkit-gradient(linear, 0 100, 0 bottom, from(#000), to(#5788fe));
+  background-image: -webkit-gradient(linear, 130 100, 0 bottom, from(#111), to(#5788fe));
 }
 body {
   position: relative;
-  background: url("../images/bottom-bg.png") repeat-x bottom;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
 }
 
 %span-base{
@@ -85,12 +91,12 @@ body {
 .moon {
   width: 80px;
   height: 80px;
-  background-color: #fff;
   position: absolute;
   top: 50px;
   right: 200px;
   border-radius: 50%;
   box-shadow: 0 0 20px #fff;
+  text-align: center;
 }
 
 @keyframes AnimCloud {
@@ -99,6 +105,10 @@ body {
     opacity: 0;
   }
   50% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  70% {
     opacity: 1;
   }
   100% {
@@ -121,8 +131,8 @@ body {
 }
 .cloud {
   background-color: #eee;
-  animation: AnimCloud 5s linear 1;
-  opacity: .5;
+  animation: AnimCloud 16s linear infinite;
+  opacity: .3;
 }
 .cloud:after,
 .cloud:before {
@@ -152,27 +162,31 @@ body {
 }
 
 .action {
-  background: #3f63b8;
-  width: 40px;
+  overflow: hidden;
   text-align: center;
 }
+.action .action-btn,
 .action div {
+  width: 40px;
   height: 40px;
   line-height: 40px;
   color: #fff;
   cursor: pointer;
-  border-bottom: 1px solid #5170b9;
+  float: left;
+  &:hover {
+    opacity: .6;
+  }
 }
 
 .parse {
   position: relative;
   &:after, &:before {
     content: '';
-    width: 16px;
+    width: 10px;
     height: 1px;
     position: absolute;
     left: 12px;
-    background-color: #fff;
+    background-color: #999;
   }
   &:after {
     top: 16px;
@@ -190,9 +204,48 @@ body {
     position: absolute;
     width: 0;
     height: 0;
-    border: 10px solid transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
     border-left-color: #fff;
-    top: 10px;
+    top: 14px;
     left: 15px;
+  }
+}
+.container {
+  position: absolute;
+  top: 61.8%;
+  left: 0;
+  right: 0;
+  line-height: 1;
+  margin-top: -0.5em;
+  text-align: center;
+  color: #fff;
+}
+.logo {
+  margin-bottom: 30px;
+  font-family: cursive;
+}
+.logo, .nav {
+  text-shadow: 0 2px 2px #111b32;
+}
+.nav {
+  ul {
+    overflow: hidden;
+    font-size: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  a {
+    color: inherit;
+    font-size: 18px;
+    text-transform: capitalize;
+    &:hover {
+      color: #5788fe;
+      transition: all .5s;
+    }
   }
 }
