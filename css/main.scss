@@ -6,7 +6,7 @@ html, body {
   height: 100%;
 }
 html {
-  background-image: -webkit-gradient(linear, 130 100, 0 bottom, from(#111), to(#5788fe));
+  background-image: -webkit-gradient(linear, 50 100, 100 bottom, from(#111), to(#5788fe));
 }
 body {
   position: relative;
@@ -226,6 +226,7 @@ li {
 .logo {
   margin-bottom: 30px;
   font-family: cursive;
+  font-size: 66px;
 }
 .logo, .nav {
   text-shadow: 0 2px 2px #111b32;

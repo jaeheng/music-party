@@ -92,14 +92,14 @@ window.onload = function () {
     var canvas = document.getElementById('canvas'),
         cwidth = canvas.width,
         cheight = canvas.height - 2,
-        twidth = 5,
+        twidth = 3,
         meterWidth = 1,
         capHeight = 1,
-        capStyle = '#fff',
+        capStyle = '#feff69',
         meterNum = 1000,
         capYPositionArray = [];
     ctx = canvas.getContext('2d');
-    var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+    var gradient = ctx.createLinearGradient(255, 255, 255, 300);
     gradient.addColorStop(1, '#46A3FF');
 
     function renderFrame() {
