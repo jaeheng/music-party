@@ -219,7 +219,7 @@ li {
   left: 0;
   right: 0;
   line-height: 1;
-  margin-top: -0.5em;
+  margin-top: -3em;
   text-align: center;
   color: #fff;
 }
@@ -255,6 +255,8 @@ li {
   width: 300px;
   max-width: 100%;
   background-color: rgba(255, 255, 255, .1);
+  position: relative;
+  z-index: 1;
   li {
     font-size: 12px;
     padding: 8px 10px;
