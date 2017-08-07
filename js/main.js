@@ -5,8 +5,8 @@ var vm = new Vue({
     el: '#app',
     data: {
         musicList: [
-            './mp3/许镜清 - 天府乐.mp3',
             './mp3/Dj Titon - 死机之歌.mp3',
+            './mp3/许镜清 - 天府乐.mp3',
             './mp3/John Williams - Twentieth Century Fox Fanfare with CinemaScope Extension.mp3',
             './mp3/许镜清 - 云宫迅音.mp3',
             './mp3/MetroGnome - Ringtone (MetroGnome Remix).mp3',
