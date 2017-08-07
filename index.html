@@ -5,13 +5,11 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Music Party</title>
+    <title>子恒博客</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_39yd3ggd7voenrk9.css">
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_i9e13qzjwy36jemi.css">
 </head>
 <body>
-<!--音乐-->
-<audio id="audio"></audio>
 <!--星星-->
 <div class="star1"></div>
 <div class="star2"></div>
@@ -26,16 +24,28 @@
 <!--云-->
 <div class="cloud"></div>
 
-<!--音乐控制器-->
-<div id="action" class="action">
-    <div class="action-btn" id="prev">
-        <i class="iconfont icon-prev"></i>
+<div id="app">
+    <!--音乐-->
+    <audio id="audio" preload onended="vm.handleEnded()"></audio>
+    <!--音乐控制器-->
+    <div id="action" class="action">
+        <div class="action-btn" @click="prev">
+            <i class="iconfont icon-prev"></i>
+        </div>
+        <div :class="isPlay ? 'parse' : 'play'" @click="playAndPause"></div>
+        <div class="action-btn" @click="next">
+            <i class="iconfont icon-next"></i>
+        </div>
+        <div id="list" @click="showList = !showList">
+            <i class="iconfont icon-music-list" :style="'color: ' + (showList ? '#538ee6' : '#ccc')"></i>
+        </div>
     </div>
-    <div id="parse" class="play"></div>
-    <div class="action-btn" id="next">
-        <i class="iconfont icon-next"></i>
-    </div>
+    <ul class="music-list" v-if="showList">
+        <li v-for="(item, index) in musicList" @click="clickMusic(index)" :class="currentMusic === index ? 'active' : ''">{{ item | getMp3Name }}</li>
+    </ul>
 </div>
+
+<!--博客链接-->
 <div class="container">
     <!--网站名称-->
     <h1 class="logo">张子恒</h1>
@@ -49,6 +59,7 @@
     </nav>
 </div>
 <canvas id="canvas" width="800" height="350"></canvas>
+<script src="js/vue.2.4.2.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

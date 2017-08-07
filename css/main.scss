@@ -215,7 +215,7 @@ li {
 }
 .container {
   position: absolute;
-  top: 61.8%;
+  top: 50%;
   left: 0;
   right: 0;
   line-height: 1;
@@ -246,6 +246,21 @@ li {
     &:hover {
       color: #5788fe;
       transition: all .5s;
+    }
+  }
+}
+
+.music-list {
+  color: #fff;
+  width: 300px;
+  max-width: 100%;
+  background-color: rgba(255, 255, 255, .1);
+  li {
+    font-size: 12px;
+    padding: 8px 10px;
+    cursor: pointer;
+    &:hover, &.active {
+      background-color: rgba(255, 255, 255, .2);
     }
   }
 }
