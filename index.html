@@ -6,61 +6,25 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>子恒博客</title>
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_i9e13qzjwy36jemi.css">
+    <style>html,body{height:100%}body{position:relative;overflow:hidden;color:#333;font-size:14px;line-height:1.5}h1,h2{font-weight:normal}h1{font-size:34px;text-transform:capitalize}h2{font-size:inherit}a{text-transform:capitalize;text-decoration:none}a:hover{color:#5788fe}h2,a{color:#999}li{list-style:none;line-height:2em;letter-spacing:2px}#canvas{position:fixed;top:0;left:0;z-index:-100;width:100%}.box{position:absolute;top:50%;left:0;right:0;line-height:1;margin-top:-73.5px;text-align:center}</style>
 </head>
-<body>
-<!--星星-->
-<div class="star1"></div>
-<div class="star2"></div>
-<div class="star3"></div>
-<!--流星-->
-<div class="spe-star"></div>
-<div class="spe-star spe-star1"></div>
-<div class="spe-star spe-star2"></div>
-
-<!--月亮-->
-<img src="images/avatar.png" alt="avatar" class="moon">
-<!--云-->
-<!--<div class="cloud"></div>-->
-
-<div id="app" v-cloak>
-    <!--音乐-->
-    <audio id="audio" preload onended="vm.handleEnded()"></audio>
-    <!--音乐控制器-->
-    <div id="action" class="action">
-        <div class="action-btn" @click="prev">
-            <i class="iconfont icon-prev"></i>
-        </div>
-        <div :class="isPlay ? 'parse' : 'play'" @click="playAndPause"></div>
-        <div class="action-btn" @click="next">
-            <i class="iconfont icon-next"></i>
-        </div>
-        <div id="list" @click="showList = !showList">
-            <i class="iconfont icon-music-list" :style="'color: ' + (showList ? '#538ee6' : '#ccc')"></i>
-        </div>
-    </div>
-    <ul class="music-list" v-if="showList">
-        <li v-for="(item, index) in musicList" @click="clickMusic(index)" :class="currentMusic === index ? 'active' : ''">{{ item | getMp3Name }}</li>
-    </ul>
-</div>
-
+<body onclick="s()">
 <!--博客链接-->
-<div class="container">
+<div class="box">
     <!--网站名称-->
-    <h1 class="logo">Jaeheng's Blog</h1>
+    <h1>Jaeheng</h1>
+    <!--网站说明-->
+    <h2>前端工程师 Front end Engineer</h2>
     <!--导航-->
     <nav class="nav">
         <ul>
             <li><a href="http://zhangziheng.com?from=home">Blog</a></li>
-            <li><a href="http://zhangziheng.com/about.html">about</a></li>
-            <li><a href="http://zhangziheng.com/callback.html">contact</a></li>
+            <li><a href="http://weibo.com/theheng" target="_blank">微博</a></li>
+            <li><a href="https://github.com/jaeheng" target="_blank">Github</a></li>
         </ul>
     </nav>
 </div>
-<canvas id="canvas" width="800" height="350"></canvas>
-<script src="js/vue.2.4.2.js"></script>
-<script src="js/main.js"></script>
-<!--音乐数据来自网易云音乐-->
+<canvas id="canvas" width="800" height="350">Your browser doesn't support canvas!</canvas>
+<script>"use strict";function s(){var b=["0,150,136","128,203,196","0,188,212","0,172,193","0,188,212"];var h=document.getElementById("canvas");var n=h.getContext("2d");var d=h.width=window.innerWidth;var m=h.height=window.innerHeight;n.clearRect(0,0,d,m);for(var e=0,g=5;e<g;e++){var l=0.5;var f=1;var j=Math.random()*m/2;var k=d*(2*Math.random()+1)/4;n.fillStyle="rgba("+b[parseInt(Math.random()*g)]+","+l+")";n.arc(k,j,f,0,2*Math.PI);n.fill()}}s();</script>
 </body>
 </html>
