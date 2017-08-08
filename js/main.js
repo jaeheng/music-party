@@ -1,4 +1,5 @@
 "use strict";
+
 function s() {
     var colors = [
         '0,150,136',
@@ -22,4 +23,8 @@ function s() {
         ctx.fill();
     }
 }
+
 s();
+setInterval(function () {
+    s()
+}, 2000)
