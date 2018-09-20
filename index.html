@@ -5,16 +5,16 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>子恒博客</title>
-    <meta name="keywords" content="子恒博客,前端开发,web开发,个人博客,emlog模板">
+    <title>jaeheng's blog</title>
+    <meta name="keywords" content="jaeheng,子恒博客,emlog模版,emlog主题,beginning模版,emlog beginning, emlog博客,emlog api">
     <meta name="description" content="本博客是记录子恒在web开发工作中遇到的问题及解决办法">
     <meta name="author" content="jaeheng,jaeheng@qq.com">
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="bookmark" href="favicon.ico" type="image/x-icon" />
-    <style>html,body{height:100%}body{position:relative;overflow:hidden;color:#333;font-size:14px;line-height:1.5;font-family:'Microsoft Yahei';}h1,h2{font-weight:normal}h1{font-size:34px;text-transform:capitalize}h2{font-size:inherit}a{text-transform:capitalize;text-decoration:none}a:hover{color:#5788fe}h2,a{color:#999}ul{padding-left:0;}li{list-style:none;line-height:2em;letter-spacing:2px}#canvas{position:fixed;top:0;left:0;z-index:-100;width:100%}.box{position:absolute;top:50%;left:0;right:0;line-height:1;margin-top:-73.5px;text-align:center}</style>
+    <style>html,body{height:100%}body{position:relative;overflow:hidden;color:#333;font-size:14px;line-height:1.5;font-family:'Microsoft Yahei';}h1,h2{font-weight:normal}h1{font-size:34px;text-transform:capitalize}h2{font-size:inherit}a{text-transform:capitalize;text-decoration:none}a:hover{color:#5788fe}h2,a{color:#999}ul{padding-left:0;}li{list-style:none;line-height:2em;letter-spacing:2px}#canvas{position:fixed;top:0;left:0;z-index:-100;width:100%}.box{position: absolute;top: 50%;left: 0;right: 0;line-height: 1;text-align: center;width: 500px;margin: -216px auto 0;background: rgba(255, 255, 255, .5);padding: 100px 0;max-width:100%;box-sizing: border-box;}</style>
 </head>
-<body onclick="s()">
+<body>
 <!--博客链接-->
 <div class="box">
     <!--网站名称-->
@@ -25,13 +25,13 @@
     <nav class="nav">
         <ul>
             <li><a href="http://tt.zhangziheng.com" target="_blank">Typing training</a></li>
+            <li><a href="https://blog.zhangziheng.com/481.html" target="_blank" style="font-weight:bold;">Beginning模版</a></li>
             <li><a href="http://blog.zhangziheng.com?from=home">Blog</a></li>
             <li><a href="http://weibo.com/theheng" target="_blank">微博</a></li>
             <li><a href="https://github.com/jaeheng" target="_blank">Github</a></li>
         </ul>
     </nav>
 </div>
-<canvas id="canvas" width="800" height="350">Your browser doesn't support canvas!</canvas>
-<script>"use strict";function s(){var b=["0,150,136","128,203,196","0,188,212","0,172,193","0,188,212"];var h=document.getElementById("canvas");var n=h.getContext("2d");var d=h.width=window.innerWidth;var m=h.height=window.innerHeight;n.clearRect(0,0,d,m);for(var e=0,g=5;e<g;e++){var l=0.5;var f=1;var j=Math.random()*m/2;var k=d*(2*Math.random()+1)/4;n.fillStyle="rgba("+b[parseInt(Math.random()*g)]+","+l+")";n.arc(k,j,f,0,2*Math.PI);n.fill()}}setTimeout(s,200);</script>
+<script src="js/effect.js"></script>
 </body>
 </html>
